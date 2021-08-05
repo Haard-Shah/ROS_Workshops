@@ -8,6 +8,9 @@ You can use <b>Virtual Box</b> by <i>Oracle</i> or <b>VMWare</b> we prefer virtu
 
 
 #### Vritual Box 
+
+Virtual Box install: https://www.virtualbox.org/wiki/Downloads
+
 Here is the link to the ubunutu guide. You will need to install the ubuntu virtual image available at: https://www.linuxvmimages.com/images/ubuntu-1804/ (Ensure you download the correct version, the virtual box image)
 
 then follow this guide: https://www.linuxvmimages.com/how-to-use/how-to-import-vm-images-in-virtualbox/ it walks you through on how to install ubuntu on a virtual box. 
