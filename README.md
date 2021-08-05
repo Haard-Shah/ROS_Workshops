@@ -22,3 +22,11 @@ Ensure when installing the ubuntu image the disk image is in the same directory 
 
 
 If the above doesn't work here is a sepearte guide: https://brb.nci.nih.gov/seqtools/installUbuntu.html 
+
+-----
+This will be covered in the workshop but if you want to get ahead here are ROS installation guides. 
+
+### ROS installation 
+First we need to install al the dependencies and ROS itself, follow this guide to help install ROS and all its dependencies: http://wiki.ros.org/melodic/Installation/Ubuntu 
+
+Next we need to download the catkin build tools. Note ROS comes with ros build tools but they are no longer supported and all the build tools have transitioned to catkin build tools. Guide: http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment 
