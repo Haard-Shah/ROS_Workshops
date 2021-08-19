@@ -38,6 +38,10 @@ ROS runs on a linux based environment you can therefore dual boot a non linux na
 
 You can use <b>Virtual Box</b> by <i>Oracle</i> or <b>VMWare</b> we prefer virtualbox as its more user friendly however the below guide 
 
+### Custom Ubuntu 18.04 + ROS Melodic Image
+Here is the custom Image I mentioned in workshop 1 to get everything up and running quickly: 
+https://connectqutedu-my.sharepoint.com/:u:/g/personal/n10235779_qut_edu_au/ETgwntNDdA1NiAJL6OZVXcUBAbiZh3y3Hry2C_RfpHMt4A?e=eYyGQW
+
 
 #### Vritual Box 
 
