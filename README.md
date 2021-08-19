@@ -14,8 +14,9 @@ we will be focused on orientation estimation for today, using an MPU sensor. We 
 ## setup 
 We will reading the MPU sensor readings via a raspberry pi and then we will actuate a servo based on the MPU readings. 
 
-To install ROS on the rapsberry pi with ROS preinstalled, please follow the ROS Wiki guide here 
+To install ROS on the rapsberry pi with ROS preinstalled, please download the image from  
 http://downloads.ubiquityrobotics.com/
+and flash the image using balena etcher software: https://www.balena.io/etcher/ or your preferred image flashing software.
 
 Or if you like to setup the pi yourself please follow the installation guide at ROS WIKI:
 http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi
