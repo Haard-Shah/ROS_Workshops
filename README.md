@@ -30,6 +30,14 @@ to get ros installed as we did in <b>\#workshop 1</b>
 5. 9g Serve (Any othe servo is fine as well but please double check the raspberry pi can handle the load)
 
 
+### Workshop files
+Files for workshop 2 can be found in the workshop 2 folder. You will need the GPIOzero library for the raspberry pi to test the Servo. 
+`sudo apt update`
+`sudo apt install python3-gpiozero`
+
+or you can directally install it using python3 pip utility on command line using the following: 
+`sudo pip3 install gpiozero`
+
 -------
 
 ## Workshop 1
