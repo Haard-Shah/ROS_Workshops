@@ -1,5 +1,33 @@
 # ROS_Workshops
+## Workshop 3
+So far we have learned about the ros node trees, subscriber and publisher nodes, messages and topic channels. Last week we covered to interface with hardware to actuate a system and designed a very simple roll controller system which read the IMU roll angle and corrected the angle using a servo. This week we will open up to a more wholistic platform and later focus on the vision system. In this workshop we will look at how to communicate data over a network, which may consist of a platform with sensors and a ground system which does the decision making and relays commands back to the platform. 
 
+All our sensor inputs, i.e. our platform will be a simulated by our phones which are connected on the network. Please download the following apps for the workshop.
+    
+### Android 
+ROS Android Sensors Driver
+From: https://play.google.com/store/apps/details?id=org.ros.android.sensors_driver&hl=en_AU&gl=US
+
+or you can also download the <b> ROS Sensor</b> app for however it is <u>paid</u> from: https://play.google.com/store/apps/details?id=org.ros.android.android_all_sensors_driver&hl=en_AU&gl=US
+
+### Iphone 
+ROS Drivers for IOS is difficult but here is a guide to help set it up as well: https://pietrocolombo.medium.com/use-iphone-as-imu-in-ros-2b3afbc50184
+
+
+
+#### Phone connection setup: 
+1. On the ROS Master URI please input the following IP Address: 
+    `192.168.0.1:11331 or the ip address of your raspberry pi which is running the ROS MASTER`
+2. start streaming sensor data on the network.
+
+
+
+The streamed data should be available on the device hosting the ROS Master. All the nodes now should be available for all the devices on the network to perform analysis on. 
+
+Extension: 
+To take image processing further here is YOLO ML tutorial with ROS here: https://github.com/leggedrobotics/darknet_ros 
+
+-------
 ## Workshop 2
 This workshop will be a lot more hands on focused on getting the items intefaced with each other. The most important components of an autonomous system are the following: 
 * State Estimation
