@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/cal/code/ROS_Workshops/Workshop_4/slam_dunk.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/slam_dunk.srdf
+  CONFIG:
+    author_name: Callum Hays
+    author_email: callum@lyro.io
+    generated_timestamp: 1631080537
