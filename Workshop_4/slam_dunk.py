@@ -50,13 +50,13 @@ def move_to_pose(pose):
 
     # calculate a JointTrajectory "plan" that could be followed to reach the target
     robot_arm.set_pose_target(pose.pose)
-    success, plan, _, _ = robot_arm.plan()
-    assert success
+    success = robot_arm.go(wait=True)
+    # plan = robot_arm.plan()
 
-    # now execute the planned path.
-    # this should always succeed as our robot is simulated and will do exactly what we command!
-    success = robot_arm.execute(plan, wait=True)
-    assert success
+    # # now execute the planned path.
+    # # this should always succeed as our robot is simulated and will do exactly what we command!
+    # success = robot_arm.execute(plan, wait=True)
+    # assert success
 
 # %% Step 4e
 
