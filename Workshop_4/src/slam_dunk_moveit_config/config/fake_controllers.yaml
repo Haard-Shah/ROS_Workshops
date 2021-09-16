@@ -1,5 +1,5 @@
 controller_list:
-  - name: fake_slam_dunk_controller
+  - name: fake_slam_dunk_planning_group_controller
     type: $(arg execution_type)
     joints:
       - ur5_shoulder_pan_joint
@@ -8,6 +8,6 @@ controller_list:
       - ur5_wrist_1_joint
       - ur5_wrist_2_joint
       - ur5_wrist_3_joint
-initial: # Define initial robot poses.
-  - group: slam_dunk
-    pose: idle
+initial:  # Define initial robot poses.
+  - group: slam_dunk_planning_group
+    pose: home

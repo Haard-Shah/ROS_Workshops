@@ -10,6 +10,10 @@ source /opt/ros/melodic/setup.sh
 catkin build
 ```
 
+```bash
+roslaunch moveit_setup_assistant setup_assistant.launch
+```
+
 ## Running The Script
 
 ```bash

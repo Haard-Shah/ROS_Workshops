@@ -1,56 +1,29 @@
 import sys
-from typing import Iterable
-from moveit_commander import robot
 
 import rospy
-from std_msgs.msg import Header
-from geometry_msgs.msg import PoseStamped, Pose, Point, Quaternion
+from geometry_msgs.msg import PoseStamped
 
 import moveit_commander
 from moveit_commander.move_group import MoveGroupCommander
 from moveit_commander.planning_scene_interface import PlanningSceneInterface
 
+from poses import ORIGIN_POSE, BASKETBALL_POSE, BASKETBALL_GRASP_POSE, DUNK_IN_HOOP_POSE
+
+# initialize the ros node
 moveit_commander.roscpp_initialize(sys.argv)
 rospy.init_node('slam_dunk_node')
 
+# create moveit interface objects
 robot_arm = MoveGroupCommander('slam_dunk_planning_group')
+environment = PlanningSceneInterface(synchronous=True)
 
+# publish the target Poses in RViz so we can visualize our motion goals
 target_pose = rospy.Publisher(
     "target_pose", PoseStamped, queue_size=10, latch=True)
 
-environment = PlanningSceneInterface(synchronous=True)
-
-
-def define_pose(position: Iterable[float], quaternion: Iterable[float]):
-    return PoseStamped(
-        header=Header(
-            frame_id="world"
-        ),
-        pose=Pose(
-            position=Point(*position),
-            orientation=Quaternion(*quaternion)
-        )
-    )
-
-
-# define important poses wrt. the "world" frame
-ORIGIN_POSE = define_pose(
-    [0, 0, 0],
-    [0, 0, 0, 1]
-)
-BASKETBALL_POSE = define_pose(
-    [0.4468396053, -0.0034719435, 0.3678862186],
-    [0, 0, 0, 1]
-)
-BASKETBALL_GRASP_POSE = define_pose(
-    [0.3871681929, 0.0200828641, 0.4057507893],
-    [0.0843928720, 0.8555283434, -0.1217124127, 0.4961201321]
-)
-DUNK_IN_HOOP_POSE = define_pose(
-    [-0.3412968401, -0.0248166078, 0.3888232048],
-    [-0.4673231353, -0.8836860646, -0.0240147086, -0.0114595050]
-)
-
+# let moveit know what objects are in the robot's environment.
+# note that these are usually dynamic objects; static objects such as the environment
+# are typically defined as a "link" in the urdf.xacro
 environment.add_mesh('environment', ORIGIN_POSE, "environment.stl",
                      size=(0.01, 0.01, 0.01))
 environment.add_mesh('basketball', BASKETBALL_POSE, "basketball.stl",
@@ -58,9 +31,8 @@ environment.add_mesh('basketball', BASKETBALL_POSE, "basketball.stl",
 
 # MoveIt computes trajectories somewhat non-deterministically.
 # Our obstacle course is quite challenging; so lets give it some more time to work with
-robot_arm.set_planning_time(10)
+robot_arm.set_planning_time(5)
 robot_arm.set_num_planning_attempts(10)
-
 
 rospy.sleep(0.5)  # sleep so targets.publish() works
 
@@ -86,7 +58,7 @@ move_to_pose(BASKETBALL_GRASP_POSE)
 robot_arm.attach_object('basketball')
 
 try:
-    print("Moving to SLAM DUNK")
+    print("Moving to DUNK_IN_HOOP_POSE")
     move_to_pose(DUNK_IN_HOOP_POSE)
 
 finally:
