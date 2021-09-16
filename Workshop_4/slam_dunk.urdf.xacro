@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       name="slam_dunk" >
+
+	<!-- the robot's static environment -->
+	<link name="world" />
+
+	<!-- the UR5 Robot -->
+	<xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+	<xacro:ur5_robot prefix="ur5_" joint_limited="true" />
+	<joint name="world_joint" type="fixed">
+		<parent link="world" />
+		<child link = "ur5_base_link" />
+		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+	</joint>
+
+</robot>
