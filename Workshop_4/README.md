@@ -11,6 +11,7 @@ catkin build
 ```
 
 ```bash
+source devel/setup.sh
 roslaunch moveit_setup_assistant setup_assistant.launch
 ```
 
@@ -30,25 +31,4 @@ python3 slam_dunk.py
 
 ## Workshop Instructions
 
-Backup and remove the `slam_dunk_moveit_config` folder:
-
-```bash
-mv src/slam_dunk_moveit_config slam_dunk_moveit_config.bak
-```
-
-Run MoveIt! Setup Assistant:
-
-```bash
-source devel/setup.sh
-roslaunch moveit_setup_assistant setup_assistant.launch
-```
-
-TODO!: detailed setup_assistant instructions
-
-Run the demo launch and test moving the arm around in an empty environment:
-
-```bash
-roslaunch slam_dunk_moveit_config demo.launch
-```
-
-TODO!: detailed slam_dunk.py coding instructions
+Follow along with the [Workshop Slides](https://docs.google.com/presentation/d/1bqUCLDICMg0CD7Tia0VFK1l_IqdKAusYh1RacY6YJoI/edit?usp=sharing)

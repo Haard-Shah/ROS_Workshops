@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: Callum Hays
     author_email: callum@lyro.io
-    generated_timestamp: 1631686655
+    generated_timestamp: 1631765134

@@ -10,4 +10,4 @@ controller_list:
       - ur5_wrist_3_joint
 initial:  # Define initial robot poses.
   - group: slam_dunk_planning_group
-    pose: home
+    pose: idle
