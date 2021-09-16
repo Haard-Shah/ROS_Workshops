@@ -1,11 +1,8 @@
-
-from typing import Iterable
-
 from std_msgs.msg import Header
 from geometry_msgs.msg import PoseStamped, Pose, Point, Quaternion
 
 
-def define_pose(position: Iterable[float], quaternion: Iterable[float]):
+def define_pose(position, quaternion):
     return PoseStamped(
         header=Header(frame_id="world"),
         pose=Pose(

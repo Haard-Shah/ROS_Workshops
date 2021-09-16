@@ -44,7 +44,7 @@ environment.add_mesh('basketball', BASKETBALL_POSE, "basketball.stl",
 # %% Step 4d
 
 
-def move_to_pose(pose: PoseStamped):
+def move_to_pose(pose):
     # publish the goal so that we can see it in rviz
     target_pose.publish(pose)
 
